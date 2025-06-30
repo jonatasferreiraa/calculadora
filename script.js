@@ -8,6 +8,7 @@ let history = "";
 let current = "0";
 let operator = "";
 let resetNext = false;
+let firstOperand = null;
 
 // Função para formatar o número com separador de milhar de forma simples
 function formatNumber(num) {
@@ -28,6 +29,7 @@ function clear() {
   current = "0";
   operator = "";
   resetNext = false;
+  firstOperand = null;
   updateDisplay();
 }
 
@@ -40,6 +42,9 @@ function inputNumber(num) {
   } else {
     current = current === "0" ? num : current + num;
   }
+  if (operator) {
+    history = `${formatNumber(firstOperand)} ${operator} ${current}`;
+  }
   updateDisplay();
 }
 
@@ -47,13 +52,16 @@ function setOperator(op) {
   if (operator && !resetNext) {
     calculate();
   }
-  history = `${formatNumber(current)}${op}`;
+  firstOperand = parseFloat(current.replace(/[.,]/g, ""));
   operator = op;
+  history = `${formatNumber(current)} ${operator}`;
   resetNext = true;
+  updateDisplay();
 }
 
 function calculate() {
-  let prev = parseFloat(history.replace(/[.,]/g, "").slice(0, -1));
+  if (operator === "") return;
+  let prev = firstOperand;
   let curr = parseFloat(current.replace(/[.,]/g, ""));
   let result = 0;
   switch (operator) {
@@ -75,6 +83,7 @@ function calculate() {
   current = result.toString();
   history = "";
   operator = "";
+  firstOperand = null;
   resetNext = true;
   updateDisplay();
 }
