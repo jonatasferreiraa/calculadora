@@ -5,42 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Calculator</h1>
-    <div class="trilho-mode">
-      <div class="indicator"></div>
+    <div class="calculator">
+      <div class="toggle-theme">
+        <div class="indicator"></div>
+      </div>
     </div>
     <div class="container">
       <input type="text" id="display" disabled />
     </div>
-    <div>
-      <button>C</button>
-      <button>+/-</button>
-      <button>%</button>
-      <button>÷</button>
+    <div class="calculator-buttons">
+      <button class="btn btn-func">C</button>
+      <button class="btn btn-func">+/-</button>
+      <button class="btn btn-func">%</button>
+      <button class="btn btn-op">÷</button>
 
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>x</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn btn-op">x</button>
 
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>-</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn btn-op">-</button>
 
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>+</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn btn-op">+</button>
 
-      <button>.</button>
-      <button>⌫</button>
-      <button>3</button>
-      <button>=</button>
+      <button class="btn">.</button>
+      <button class="btn">0</button>
+      <button class="btn">⌫</button>
+      <button class="btn btn-eq">=</button>
     </div>
   </body>
 
-  <script src="script.js"></script>
+  <script src="/"></script>
 </html>

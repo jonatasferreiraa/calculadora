@@ -1,0 +1,28 @@
+:root {
+  --dark-bg-main: #17171c;
+  --button-low-Emphasis: #2e2f38;
+  --button-medium-Emphasis: #4e505f;
+  --button-high-Emphasis: #4b5efc;
+  --light-bg-main: #f1f2f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--dark-bg-main);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  height: 812px;
+}
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
