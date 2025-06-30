@@ -21,6 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Work Sans", sans-serif;
+  transition: background 0.3s;
 }
 
 .calculator {
@@ -30,6 +31,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  transition: background 0.3s;
+}
+
+.calculator:hover {
+  transition: 0.4s;
 }
 
 .toggle-theme {
@@ -38,11 +44,102 @@ body {
   align-items: center;
   margin-bottom: 8px;
   cursor: pointer;
+  user-select: none;
 }
 
-.theme-icon {
-  font-size: 1.5rem;
-  user-select: none;
+.switch {
+  position: relative;
+  width: 80px;
+  height: 36px;
+  background: #23232a;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: #484857;
+  border-radius: 50%;
+  transition: left 0.3s, background 0.3s;
+  box-shadow: 0 1px 4px #0003;
+  z-index: 2;
+}
+
+.switch .sun,
+.switch .moon {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.switch .sun {
+  margin-right: auto;
+}
+
+.switch .moon {
+  margin-left: auto;
+}
+
+.switch .sun svg,
+.switch .moon svg {
+  display: block;
+}
+
+.switch .sun svg circle,
+.switch .sun svg line,
+.switch .moon svg path {
+  transition: stroke 0.3s, fill 0.3s;
+}
+
+.switch .sun svg circle,
+.switch .sun svg line {
+  stroke: #888;
+}
+
+.switch .moon svg path {
+  fill: #888;
+}
+
+body.light .switch {
+  background: #e5e5e5;
+}
+
+body.light .slider {
+  left: 48px;
+  background: #fff;
+}
+
+body.light .switch .sun svg circle,
+body.light .switch .sun svg line {
+  stroke: #4b5efc;
+}
+
+body.light .switch .moon svg path {
+  fill: #888;
+}
+
+body:not(.light) .switch .moon svg path {
+  fill: #4b5efc;
+}
+
+body:not(.light) .switch .sun svg circle,
+body:not(.light) .switch .sun svg line {
+  stroke: #888;
 }
 
 .display {
@@ -62,13 +159,15 @@ body {
   color: #888;
   margin-bottom: 4px;
   min-height: 40px;
+  word-break: break-all;
 }
 
 .display .result {
-  font-size: 6rem;
+  font-size: 4rem;
   font-weight: 300;
   letter-spacing: 2px;
   min-height: 40px;
+  word-break: break-all;
 }
 
 .buttons {
@@ -85,15 +184,56 @@ body {
   border-radius: 24px;
   padding: 18px 0;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
 .btn:hover {
   background: var(--button-medium-Emphasis);
-  transition: 0.2s;
 }
 
 .btn-op,
 .btn-eq {
   background: var(--button-high-Emphasis);
   color: #fff;
+}
+
+.btn-eq {
+  font-weight: bold;
+}
+
+.btn-func {
+  background: var(--button-medium-Emphasis);
+  color: #fff;
+}
+
+body.light .calculator {
+  background: var(--light-bg-main);
+}
+
+body.light .display {
+  color: var(--light-text);
+}
+
+body.light .display .history {
+  color: #aaa;
+}
+
+body.light .btn {
+  background: var(--light-btn-low);
+  color: var(--light-text);
+}
+
+body.light .btn:hover {
+  background: var(--light-btn-medium);
+}
+
+body.light .btn-op,
+body.light .btn-eq {
+  background: var(--light-btn-high);
+  color: #fff;
+}
+
+body.light .btn-func {
+  background: var(--light-btn-medium);
+  color: var(--light-text);
 }

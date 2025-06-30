@@ -5,17 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body>
     <div class="calculator">
       <div class="toggle-theme" id="toggle-theme">
-        <span class="theme-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g opacity="0.7">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.03239 6.23186C6.2001 7.49474 5 9.60797 5 11.9999C5 15.8659 8.13401 18.9999 12 18.9999C14.3918 18.9999 16.5049 17.8 17.7678 15.9678C17.5146 15.9893 17.2585 16.0002 17 16.0002C12.0294 16.0002 8 11.9708 8 7.00019C8 6.7415 8.01094 6.48524 8.03239 6.23186ZM3 11.9999C3 8.04173 5.55459 4.68279 9.10211 3.47693L10.3707 4.74561C10.1306 5.45177 10 6.20969 10 7.00019C10 10.8662 13.134 14.0002 17 14.0002C17.7904 14.0002 18.5482 13.8696 19.2542 13.6296L20.5228 14.8983C19.3168 18.4455 15.958 20.9999 12 20.9999C7.02944 20.9999 3 16.9705 3 11.9999Z" fill="#4B5EFC"/>
-          </g>
-          </svg></span>
+        <div class="switch">
+          <span class="sun">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11 0V1V3V4H9V3V1V0H11ZM0 9H1H3H4V11H3H1H0V9ZM17 9H16V11H17H19H20V9H19H17ZM11 16V17V19V20H9V19V17V16H11ZM15.6568 17.0711L16.364 17.7782L17.7782 16.364L17.0711 15.6569L15.6568 14.2427L14.9497 13.5356L13.5355 14.9498L14.2426 15.6569L15.6568 17.0711ZM5.05023 6.46451L4.34312 5.7574L2.92891 4.34319L2.2218 3.63608L3.63602 2.22187L4.34313 2.92897L5.75734 4.34319L6.46445 5.05029L5.05023 6.46451ZM17.0711 4.34309L17.7782 3.63599L16.364 2.22177L15.6568 2.92888L14.2426 4.34309L13.5355 5.0502L14.9497 6.46441L15.6568 5.75731L17.0711 4.34309ZM6.46445 14.9497L5.75734 15.6568L4.34312 17.071L3.63602 17.7781L2.2218 16.3639L2.92891 15.6568L4.34313 14.2426L5.05023 13.5355L6.46445 14.9497ZM8 10C8 8.89543 8.89543 8 10 8C11.1046 8 12 8.89543 12 10C12 11.1046 11.1046 12 10 12C8.89543 12 8 11.1046 8 10ZM10 6C7.79086 6 6 7.79086 6 10C6 12.2091 7.79086 14 10 14C12.2091 14 14 12.2091 14 10C14 7.79086 12.2091 6 10 6Z"
+                fill="#4B5EFC"
+              />
+            </svg>
+          </span>
+          <span class="moon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <g opacity="0.7">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.03239 6.23186C6.2001 7.49474 5 9.60797 5 11.9999C5 15.8659 8.13401 18.9999 12 18.9999C14.3918 18.9999 16.5049 17.8 17.7678 15.9678C17.5146 15.9893 17.2585 16.0002 17 16.0002C12.0294 16.0002 8 11.9708 8 7.00019C8 6.7415 8.01094 6.48524 8.03239 6.23186ZM3 11.9999C3 8.04173 5.55459 4.68279 9.10211 3.47693L10.3707 4.74561C10.1306 5.45177 10 6.20969 10 7.00019C10 10.8662 13.134 14.0002 17 14.0002C17.7904 14.0002 18.5482 13.8696 19.2542 13.6296L20.5228 14.8983C19.3168 18.4455 15.958 20.9999 12 20.9999C7.02944 20.9999 3 16.9705 3 11.9999Z"
+                  fill="#4B5EFC"
+                />
+              </g>
+            </svg>
+          </span>
+          <div class="slider"></div>
+        </div>
       </div>
       <div class="display">
         <div class="history"></div>
@@ -48,7 +78,6 @@
         <button class="btn btn-eq">=</button>
       </div>
     </div>
-    
     <script src="script.js"></script>
   </body>
 </html>
