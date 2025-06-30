@@ -3,6 +3,7 @@ Calculadora Responsiva
 Uma calculadora moderna, responsiva e com suporte a modo claro/escuro, desenvolvida em HTML, CSS e JavaScript puro.
 
 ✨ Sobre o Projeto
+
 Este projeto é um clone fiel de uma calculadora mobile, desenvolvido para fins de portfólio, com foco em responsividade, acessibilidade e experiência de usuário.
 
 🚀 Funcionalidades
