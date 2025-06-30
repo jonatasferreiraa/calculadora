@@ -15,7 +15,7 @@
 }
 
 body {
-  background: var(--dark-bg-main);
+  background: #23232a;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,18 +24,24 @@ body {
   transition: background 0.3s;
 }
 
+body.light {
+  background: #e5e5e5;
+}
+
 .calculator {
-  background: var(--dark-bg-main);
+  background: var(--dark-bg-main, #17171c);
   width: 340px;
   padding: 24px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px #0008;
   transition: background 0.3s;
 }
 
-.calculator:hover {
-  transition: 0.4s;
+body.light .calculator {
+  background: var(--light-bg-main, #f1f2f3);
 }
 
 .toggle-theme {
@@ -56,10 +62,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
   box-sizing: border-box;
   overflow: hidden;
+  padding: 0 8px;
   transition: background 0.3s;
+}
+
+body.light .switch {
+  background: #e5e5e5;
+}
+
+.switch .sun,
+.switch .moon {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+body.light .switch .sun {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body:not(.light) .switch .moon {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .slider {
@@ -67,79 +100,18 @@ body {
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background: #484857;
   border-radius: 50%;
   transition: left 0.3s, background 0.3s;
   box-shadow: 0 1px 4px #0003;
-  z-index: 2;
-}
-
-.switch .sun,
-.switch .moon {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-}
-
-.switch .sun {
-  margin-right: auto;
-}
-
-.switch .moon {
-  margin-left: auto;
-}
-
-.switch .sun svg,
-.switch .moon svg {
-  display: block;
-}
-
-.switch .sun svg circle,
-.switch .sun svg line,
-.switch .moon svg path {
-  transition: stroke 0.3s, fill 0.3s;
-}
-
-.switch .sun svg circle,
-.switch .sun svg line {
-  stroke: #888;
-}
-
-.switch .moon svg path {
-  fill: #888;
-}
-
-body.light .switch {
-  background: #e5e5e5;
+  z-index: 1;
 }
 
 body.light .slider {
-  left: 48px;
-  background: #fff;
-}
-
-body.light .switch .sun svg circle,
-body.light .switch .sun svg line {
-  stroke: #4b5efc;
-}
-
-body.light .switch .moon svg path {
-  fill: #888;
-}
-
-body:not(.light) .switch .moon svg path {
-  fill: #4b5efc;
-}
-
-body:not(.light) .switch .sun svg circle,
-body:not(.light) .switch .sun svg line {
-  stroke: #888;
+  left: 50px;
+  background: #d1d2da;
 }
 
 .display {
@@ -177,7 +149,7 @@ body:not(.light) .switch .sun svg line {
 }
 
 .btn {
-  background: var(--button-low-Emphasis);
+  background: #2e2f38;
   color: #ffffff;
   font-size: 2rem;
   border: none;
@@ -188,12 +160,12 @@ body:not(.light) .switch .sun svg line {
 }
 
 .btn:hover {
-  background: var(--button-medium-Emphasis);
+  background: #4e505f;
 }
 
 .btn-op,
 .btn-eq {
-  background: var(--button-high-Emphasis);
+  background: #4b5efc;
   color: #fff;
 }
 
@@ -202,38 +174,26 @@ body:not(.light) .switch .sun svg line {
 }
 
 .btn-func {
-  background: var(--button-medium-Emphasis);
+  background: #4e505f;
   color: #fff;
 }
 
-body.light .calculator {
-  background: var(--light-bg-main);
-}
-
-body.light .display {
-  color: var(--light-text);
-}
-
-body.light .display .history {
-  color: #aaa;
-}
-
 body.light .btn {
-  background: var(--light-btn-low);
-  color: var(--light-text);
+  background: #e5e5e5;
+  color: #222;
 }
 
 body.light .btn:hover {
-  background: var(--light-btn-medium);
+  background: #d1d2da;
 }
 
 body.light .btn-op,
 body.light .btn-eq {
-  background: var(--light-btn-high);
+  background: #4b5efc;
   color: #fff;
 }
 
 body.light .btn-func {
-  background: var(--light-btn-medium);
-  color: var(--light-text);
+  background: #d1d2da;
+  color: #222;
 }
