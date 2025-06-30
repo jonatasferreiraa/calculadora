@@ -1,28 +1,99 @@
 :root {
+  --body-color: #e5e5e5;
   --dark-bg-main: #17171c;
   --button-low-Emphasis: #2e2f38;
   --button-medium-Emphasis: #4e505f;
   --button-high-Emphasis: #4b5efc;
   --light-bg-main: #f1f2f3;
-}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Work Sans", sans-serif;
-  background-color: var(--dark-bg-main);
+  /* Light mode */
+  --light-bg: #f1f2f3;
+  --light-btn-low: #e5e5e5;
+  --light-btn-medium: #d1d2da;
+  --light-btn-high: #4b5efc;
+  --light-text: #222;
 }
 
 body {
+  background: var(--dark-bg-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Work Sans", sans-serif;
+}
+
+.calculator {
+  background: var(--dark-bg-main);
+  width: 340px;
+  padding: 24px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.toggle-theme {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 375px;
-  height: 812px;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
-.calculator-buttons {
+
+.theme-icon {
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.display {
+  background: none;
+  color: #fff;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.display .history {
+  font-size: 2.5rem;
+  color: #888;
+  margin-bottom: 4px;
+  min-height: 40px;
+}
+
+.display .result {
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  min-height: 40px;
+}
+
+.buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--button-low-Emphasis);
+  color: #ffffff;
+  font-size: 2rem;
+  border: none;
+  border-radius: 24px;
+  padding: 18px 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--button-medium-Emphasis);
+  transition: 0.2s;
+}
+
+.btn-op,
+.btn-eq {
+  background: var(--button-high-Emphasis);
+  color: #fff;
 }
