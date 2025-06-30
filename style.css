@@ -41,7 +41,7 @@ body.light {
 }
 
 body.light .calculator {
-  background: var(--light-bg-main, #f1f2f3);
+  background: #f1f2f3;
 }
 
 .toggle-theme {
@@ -183,7 +183,7 @@ body.light .display .result {
 }
 
 body.light .btn {
-  background: #e5e5e5;
+  background: #ffffff;
   color: #222;
 }
 
